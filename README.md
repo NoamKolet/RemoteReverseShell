@@ -17,12 +17,13 @@ The primary goal of this research was to explore:
 
 ### 1. Dynamic C2 Resolution (WAN Support)
 Legacy reverse shells often hardcode IP addresses (`inet_addr`), which limits them to local networks. This tool utilizes `getaddrinfo` to resolve domain names dynamically, enabling seamless integration with cloud-hosted listeners and Ngrok tunnels (e.g., `0.tcp.eu.ngrok.io`).
+<img width="1227" height="419" alt="ngrok" src="https://github.com/user-attachments/assets/14595e32-0bcf-47c9-b975-ae6c721b6605" />
 
 ### 2. Dual-Mode Architecture
 To maintain operational security (OpSec), the code allows for two compilation modes:
 * **Generator Mode (`BUILD_MODE 0`):** A local utility that encrypts the C2 domain and port.
 * **Attack Mode (`BUILD_MODE 1`):** The final payload containing only obfuscated strings and the execution logic.
-
+<img width="875" height="331" alt="XOR" src="https://github.com/user-attachments/assets/16c5eaf0-aca9-4640-9e79-df2142c09d0f" />
 
 ### 3. String Obfuscation (XOR)
 To evade static analysis and basic signature detection, all sensitive strings (C2 IP address and Port) are encrypted at rest.
@@ -36,6 +37,8 @@ To evade static analysis and basic signature detection, all sensitive strings (C
   2.  Enumerates running processes via `CreateToolhelp32Snapshot`.
   3.  Duplicates the target's Primary Token (`DuplicateTokenEx`).
   4.  Spawns the reverse shell using `CreateProcessWithTokenW`.
+<img width="1189" height="658" alt="Anyrun" src="https://github.com/user-attachments/assets/852f154c-73aa-4a2d-bcad-2719a09bb27f" />
+<img width="1168" height="519" alt="Kali" src="https://github.com/user-attachments/assets/e5b40e98-5d58-4253-b480-7c5cc3e3c6de" />
 
 ### 5. Custom I/O Pipe Handling
 Instead of using standard library calls, the shell interaction is managed via Windows Pipes.
