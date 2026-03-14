@@ -16,7 +16,7 @@ The primary goal of this research was to explore:
 ## ⚙️ Key Features
 
 ### 1. Dynamic C2 Resolution (WAN Support)
-Legacy reverse shells often hardcode IP addresses (`inet_addr`), which limits them to local networks. This tool utilizes `getaddrinfo` to resolve domain names dynamically, enabling seamless integration with cloud-hosted listeners and Ngrok tunnels (e.g., `0.tcp.eu.ngrok.io`).
+Legacy reverse shells often hardcode IP addresses (`inet_addr`), which limits them to local networks. This tool utilizes `getaddrinfo` to resolve domain names dynamically, enabling seamless integration with cloud-hosted listeners and Ngrok tunnels (e.g., `6.tcp.eu.ngrok.io`).
 <img width="1227" height="419" alt="ngrok" src="https://github.com/user-attachments/assets/14595e32-0bcf-47c9-b975-ae6c721b6605" />
 
 ### 2. Dual-Mode Architecture
